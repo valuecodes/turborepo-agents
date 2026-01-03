@@ -5,11 +5,19 @@
       "dependsOn": ["prebuild", "^build"],
       "outputs": ["output-file.txt", "dist/**"]
     },
+    "typecheck": {
+      "dependsOn": ["^typecheck"]
+    },
     "prebuild": {},
     "lint": {},
     "check-types": {},
     "format": {
       "dependsOn": ["^format"]
+    },
+    "dev": {
+      "dependsOn": ["^dev"],
+      "cache": false,
+      "persistent": true
     }
   }
 }

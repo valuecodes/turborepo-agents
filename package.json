@@ -4,10 +4,13 @@
   "private": true,
   "packageManager": "pnpm@10.19.0",
   "scripts": {
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "dev": "turbo run dev",
+    "typecheck": "turbo run typecheck",
+    "format": "prettier --write \"**/*.{ts,tsx,md,json,yaml}\""
   },
   "devDependencies": {
-    "prettier": "^3.7.4",
-    "turbo": "2.7.2"
+    "prettier": "3.7.4",
+    "turbo": "2.7.2",
+    "typescript": "5.9.3"
   }
 }
