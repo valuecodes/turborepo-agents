@@ -4,11 +4,15 @@
   "rsc": false,
   "tsx": true,
   "iconLibrary": "lucide",
+  "tailwind": {
+    "config": "",
+    "css": "src/styles/default.css",
+    "baseColor": "zinc",
+    "cssVariables": true
+  },
   "aliases": {
-    "components": "@/components",
-    "hooks": "@/hooks",
     "utils": "@turborepo-agents/ui/lib/utils",
-    "ui": "@turborepo-agents/ui/components",
-    "lib": "@turborepo-agents/ui/lib"
+    "components": "src/components",
+    "ui": "src/components"
   }
 }

@@ -1,4 +1,5 @@
 import { Button } from "@turborepo-agents/ui/components/button";
+import { Slider } from "@turborepo-agents/ui/components/slider";
 import Image from "next/image";
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
           height={20}
           priority
         />
+        <Slider defaultValue={[50]} max={100} className="w-full my-8" />
         <Button variant={"destructive"} size="lg">
           Get Started
         </Button>
