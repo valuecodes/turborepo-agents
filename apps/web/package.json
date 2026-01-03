@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "typecheck": "tsc --noEmit",
-    "lint": "eslint"
+    "lint": "eslint",
+    "clean": "rm -rf .turbo node_modules .next .cache"
   },
   "dependencies": {
     "next": "16.1.1",
@@ -15,13 +16,13 @@
     "react-dom": "19.2.3"
   },
   "devDependencies": {
-    "@turborepo-agents/typescript": "workspace:*",
     "@tailwindcss/postcss": "4",
+    "@turborepo-agents/eslint": "workspace:*",
+    "@turborepo-agents/typescript": "workspace:*",
     "@types/node": "20",
     "@types/react": "19",
     "@types/react-dom": "19",
-    "eslint": "9",
-    "eslint-config-next": "16.1.1",
+    "eslint": "9.39.1",
     "tailwindcss": "4",
     "typescript": "5.9.3"
   }

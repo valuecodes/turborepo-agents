@@ -1,6 +1,6 @@
 {
   "extends": "@turborepo-agents/typescript/nextjs.json",
-  "include": ["src", "next.config.ts"],
+  "include": ["src", "next.config.ts", "next-env.d.ts"],
   "compilerOptions": {
     "paths": {
       "~/*": ["./src/*"]

@@ -9,7 +9,10 @@
       "dependsOn": ["^typecheck"]
     },
     "prebuild": {},
-    "lint": {},
+    "lint": {
+      "dependsOn": ["^build"],
+      "outputs": [".cache/.eslintcache"]
+    },
     "check-types": {},
     "format": {
       "dependsOn": ["^format"]
