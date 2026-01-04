@@ -172,7 +172,7 @@ function ChartTooltipContent({
   return (
     <div
       className={cn(
-        "border-border/50 bg-background grid min-w-[8rem] items-start gap-1.5 rounded-lg border px-2.5 py-1.5 text-xs shadow-xl",
+        "border-border/50 bg-background grid min-w-32 items-start gap-1.5 rounded-lg border px-2.5 py-1.5 text-xs shadow-xl",
         className
       )}
     >
@@ -183,10 +183,11 @@ function ChartTooltipContent({
           .map((item, index) => {
             const key = `${nameKey ?? item.name ?? item.dataKey ?? "value"}`;
             const itemConfig = getPayloadConfigFromPayload(config, item, key);
-            // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access -- recharts payload types
+            /* eslint-disable @typescript-eslint/no-unsafe-member-access -- recharts payload types */
             const indicatorColor = (color ??
               item.payload?.fill ??
               item.color) as string;
+            /* eslint-enable @typescript-eslint/no-unsafe-member-access */
 
             return (
               <div

@@ -86,7 +86,7 @@ const Home = () => {
                   placeholder="you@company.com"
                 />
               </div>
-              <Button className="sm:min-w-[160px]">Join updates</Button>
+              <Button className="sm:min-w-40">Join updates</Button>
             </div>
           </CardContent>
         </Card>
