@@ -118,13 +118,12 @@ async function main() {
 
   log(`Formatting ${toFormat.length} file(s): ${toFormat.join(", ")}`);
 
-  for (const abs of toFormat) {
-    await formatWithPrettier(abs);
-  }
+  await Promise.all(toFormat.map((abs) => formatWithPrettier(abs)));
 
   log("Done.");
 }
 
+}
 main().catch((err) => {
   log(`Error: ${String(err)}`);
   process.exit(1);
