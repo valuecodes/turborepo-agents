@@ -42,7 +42,7 @@ pnpm --filter web dev
 
 ## Working with GitHub Copilot
 
-- Repo-wide guidance: `.github/copilot-instructions.md`; workflow guidance: `.github/workflows/copilot-instructions.md`.
+- Repo-wide and workflow guidance: `.github/copilot-instructions.md`.
 - Copilot should respect `AGENTS.md`: import boundaries, no secrets, no git operations, and focused diffs without new tooling unless discussed.
 - Prefer pnpm+Turbo commands (`pnpm lint`, `pnpm typecheck`, `pnpm build`, `pnpm format`) and include files touched plus validation commands in proposals.
 
