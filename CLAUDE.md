@@ -26,8 +26,8 @@ Workspace dependencies use the `workspace:*` protocol. All packages use the `@tu
 ```bash
 # Development
 pnpm install                    # Install all dependencies
-pnpm --filter web dev           # Run Next.js dev server
-pnpm --filter playground dev    # Run Vite dev server
+pnpm --filter web dev           # Run Next.js dev server (port 3000)
+pnpm --filter playground dev    # Run Vite dev server (port 3001)
 
 # Quality checks (run before pushing)
 pnpm typecheck                  # Type check all workspaces

@@ -20,9 +20,9 @@ Monorepo starter for building agent-friendly web apps (Next.js + Vite) with prec
 
 ```bash
 pnpm install
-pnpm --filter web dev
+pnpm --filter web dev         # http://localhost:3000
 # or
-pnpm --filter playground dev
+pnpm --filter playground dev  # http://localhost:3001
 ```
 
 ## Common tasks
