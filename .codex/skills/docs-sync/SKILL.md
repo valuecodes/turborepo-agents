@@ -18,7 +18,7 @@ Documentation files to consider:
 - `.codex/**` (Codex agent configs and skills)
 - `.claude/**` (Claude Code settings, hooks, and skills)
 - `.cursor/**` (Cursor editor configs)
-- `.github/**` (GitHub workflows and templates)
+- `.github/**` (GitHub workflows and templates, including `copilot-instructions.md`)
 - App/package-specific docs (e.g., `apps/*/README.md`, `packages/*/README.md`)
 
 ## Workflow

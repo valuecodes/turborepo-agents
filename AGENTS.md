@@ -40,6 +40,7 @@ Guidelines for AI agents and contributors working in this Turborepo monorepo.
 | prettier   | `@turborepo-agents/prettier`   | Shared Prettier config with import sorting and Tailwind plugins   |
 | typescript | `@turborepo-agents/typescript` | Shared TypeScript configs (base, react, nextjs, compiled-package) |
 | github     | `@turborepo-agents/github`     | GitHub Actions composite setup action                             |
+| agents     | `@turborepo-agents/agents`     | Agent doc sync/check scripts                                      |
 
 ---
 
@@ -112,6 +113,22 @@ pnpm --filter web dev
 ```bash
 pnpm clean
 ```
+
+### Agents check
+
+```bash
+pnpm agents:check
+```
+
+Runs: `turbo run agents:check`
+
+### Agents sync
+
+```bash
+pnpm agents:sync
+```
+
+Runs: `turbo run agents:sync`
 
 ---
 
@@ -270,6 +287,7 @@ pnpm --filter @turborepo-agents/ui <command>
 pnpm --filter @turborepo-agents/eslint <command>
 pnpm --filter @turborepo-agents/prettier <command>
 pnpm --filter @turborepo-agents/typescript <command>
+pnpm --filter @turborepo-agents/agents <command>
 ```
 
 ---
@@ -285,4 +303,6 @@ pnpm --filter @turborepo-agents/typescript <command>
 | Test all      | `pnpm test`             |
 | Build all     | `pnpm build`            |
 | Format code   | `pnpm format`           |
+| Agents check  | `pnpm agents:check`     |
+| Agents sync   | `pnpm agents:sync`      |
 | Clean all     | `pnpm clean`            |

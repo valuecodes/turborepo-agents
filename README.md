@@ -7,6 +7,7 @@ Monorepo starter for building agent-friendly Next.js apps with preconfigured too
 - Next.js app in `apps/web` (App Router, alias `~/*`)
 - Shared UI package `@turborepo-agents/ui` (shadcn/Radix/Tailwind)
 - Shared configs: ESLint, Prettier (import + Tailwind sorting), TypeScript, Turbo
+- Agent tooling in `tooling/agents` (sync/check agent docs)
 - AI agent settings in `.claude/`, `.codex/`, and `.github/`
 
 ## Prerequisites
@@ -28,6 +29,8 @@ pnpm --filter web dev
 - Test: `pnpm test`
 - Build: `pnpm build`
 - Format: `pnpm format`
+- Agents check: `pnpm agents:check`
+- Agents sync: `pnpm agents:sync`
 
 ## Working with Codex
 

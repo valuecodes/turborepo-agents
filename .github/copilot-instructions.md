@@ -15,6 +15,8 @@
   - `pnpm lint` → `turbo run lint --continue -- --cache --cache-location .cache/.eslintcache`
   - `pnpm typecheck` → `turbo run typecheck`
   - `pnpm test` → `turbo run test`
+  - `pnpm agents:check` → `turbo run agents:check`
+  - `pnpm agents:sync` → `turbo run agents:sync`
   - `pnpm build` → `turbo run build`
   - `pnpm format` (Prettier with import sorting & Tailwind plugins)
 - Dev server per app: `pnpm --filter web dev`.

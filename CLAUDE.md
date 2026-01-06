@@ -17,7 +17,7 @@ This is a Turborepo monorepo with three workspace categories:
 
 - **`apps/`** - Applications (web: Next.js 16.1.1 with App Router)
 - **`packages/`** - Shared libraries (ui: shadcn/ui component library with Radix primitives)
-- **`tooling/`** - Shared development configs (eslint, prettier, typescript, github)
+- **`tooling/`** - Shared development configs and agent tooling (eslint, prettier, typescript, github, agents)
 
 Workspace dependencies use the `workspace:*` protocol. All packages use the `@turborepo-agents/` scope.
 
@@ -35,6 +35,10 @@ pnpm test                       # Run tests across workspaces (when available)
 pnpm build                      # Build all workspaces
 pnpm format                     # Format with Prettier
 
+# Agent tooling
+pnpm agents:check               # Check agent doc sync status
+pnpm agents:sync                # Sync agent docs across targets
+
 # Package-specific commands
 pnpm --filter <pkg> <command>   # Run command in specific workspace
 pnpm --filter @turborepo-agents/ui ui-add  # Add shadcn component
@@ -47,7 +51,7 @@ pnpm clean                      # Remove build artifacts and node_modules
 
 - Apps: `web`
 - Packages: `@turborepo-agents/ui`
-- Tooling: `@turborepo-agents/eslint`, `@turborepo-agents/prettier`, `@turborepo-agents/typescript`, `@turborepo-agents/github`
+- Tooling: `@turborepo-agents/eslint`, `@turborepo-agents/prettier`, `@turborepo-agents/typescript`, `@turborepo-agents/github`, `@turborepo-agents/agents`
 
 ## Architecture
 
@@ -111,6 +115,11 @@ Export paths: `./components/*`, `./lib/*`, `./styles/*`, `./postcss-config`
 
 - Strict mode enabled
 - Exports: `./base`, `./react`, `./nextjs`, `./compiled-package`
+
+**Agents** (`@turborepo-agents/agents`):
+
+- Syncs and checks agent docs across the repo
+- Commands: `pnpm agents:check`, `pnpm agents:sync`
 
 ## Claude Code Hooks
 
