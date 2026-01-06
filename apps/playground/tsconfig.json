@@ -1,0 +1,5 @@
+{
+  "extends": "@turborepo-agents/typescript/react.json",
+  "include": ["src"],
+  "exclude": ["node_modules"]
+}
