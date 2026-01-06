@@ -16,5 +16,5 @@ Run these from the repo root:
 ```bash
 pnpm agents:check
 pnpm agents:sync
-pnpm --filter @turborepo-agents/agents format-changed-files
+pnpm --filter @turborepo-agents/agents format:changed-files
 ```

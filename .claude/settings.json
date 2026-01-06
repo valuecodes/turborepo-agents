@@ -8,7 +8,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "pnpm format-changed-files",
+            "command": "pnpm format:changed-files",
             "timeout": 120
           }
         ]
@@ -22,7 +22,7 @@
       "Bash(pnpm typecheck:*)",
       "Bash(pnpm build:*)",
       "Bash(pnpm format:*)",
-      "Bash(pnpm format-changed-files:*)",
+      "Bash(pnpm format:changed-files:*)",
       "Bash(pnpm --filter:*)",
       "Bash(bash .claude/hooks/:*)"
     ],
