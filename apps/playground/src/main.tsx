@@ -14,5 +14,7 @@ if (rootElement) {
     </StrictMode>
   );
 } else {
-  console.error("Root element not found");
+  const message = "Root element with id 'root' not found";
+  console.error(message);
+  throw new Error(message);
 }
