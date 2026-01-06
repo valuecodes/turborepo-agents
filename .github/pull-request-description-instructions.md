@@ -45,17 +45,20 @@ If you did not run something, say so and list what should be run.
 
 ## Security review
 
-Always comment on security impact:
+Always include a short checklist-style review. Use this format:
 
-- secrets / environment variables
-- auth/session
-- network calls / API surface
-- data handling / PII
-- new dependencies
+- **Secrets / env vars:** <changed | not changed>. (Never add real secrets to the repo.)
+- **Auth / session:** <changed | not changed>.
+- **Network / API calls:** <changed | not changed>. (New external calls, endpoints, SSR/CSR fetches, webhooks.)
+- **Data handling / PII:** <changed | not changed>. (Logging, analytics, storage, user-provided data.)
+- **Dependencies:** <added/updated | not changed>. (Call out any new deps and why; prefer minimal deps.)
 
 If no impact, write exactly:
 `No security-impacting changes identified.`
-Then add 1 short bullet explaining why.
+Then add 1–2 bullets justifying, e.g.:
+
+- No new dependencies and no new network calls
+- No env var changes and no auth/session logic touched
 
 ## Tone
 
