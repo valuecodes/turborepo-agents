@@ -53,6 +53,7 @@ pnpm --filter web dev
 ## Working with GitHub Copilot
 
 - Repo-wide and workflow guidance: `.github/copilot-instructions.md`.
+- VS Code Copilot Chat uses `.vscode/settings.json` to point commit and PR generation at `.github/commit-message-instructions.md` and `.github/pull-request-description-instructions.md`.
 - Copilot should respect `AGENTS.md`: import boundaries, no secrets, no git operations, and focused diffs without new tooling unless discussed.
 - Prefer pnpm+Turbo commands (`pnpm lint`, `pnpm typecheck`, `pnpm test`, `pnpm build`, `pnpm format`, `pnpm format:check`) and include files touched plus validation commands in proposals.
 
