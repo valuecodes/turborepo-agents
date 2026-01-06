@@ -16,6 +16,10 @@ const config: AgentsConfig = {
           dir: ".codex/skills",
           description: "Codex skills",
         },
+        cursor: {
+          dir: ".cursor/skills",
+          description: "Cursor skills",
+        },
       },
     },
   ],
