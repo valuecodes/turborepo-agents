@@ -72,6 +72,14 @@ pnpm typecheck
 
 Runs: `turbo run typecheck`
 
+### Test
+
+```bash
+pnpm test
+```
+
+Runs: `turbo run test`
+
 ### Build
 
 ```bash
@@ -274,6 +282,7 @@ pnpm --filter @turborepo-agents/typescript <command>
 | Run web dev   | `pnpm --filter web dev` |
 | Lint all      | `pnpm lint`             |
 | Typecheck all | `pnpm typecheck`        |
+| Test all      | `pnpm test`             |
 | Build all     | `pnpm build`            |
 | Format code   | `pnpm format`           |
 | Clean all     | `pnpm clean`            |

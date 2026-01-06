@@ -31,6 +31,7 @@ pnpm --filter web dev           # Run Next.js dev server
 # Quality checks (run before pushing)
 pnpm typecheck                  # Type check all workspaces
 pnpm lint                       # Lint with ESLint (uses Turbo cache)
+pnpm test                       # Run tests across workspaces (when available)
 pnpm build                      # Build all workspaces
 pnpm format                     # Format with Prettier
 

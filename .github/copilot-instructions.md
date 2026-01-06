@@ -14,6 +14,7 @@
 - Prefer Turbo tasks via pnpm:
   - `pnpm lint` → `turbo run lint --continue -- --cache --cache-location .cache/.eslintcache`
   - `pnpm typecheck` → `turbo run typecheck`
+  - `pnpm test` → `turbo run test`
   - `pnpm build` → `turbo run build`
   - `pnpm format` (Prettier with import sorting & Tailwind plugins)
 - Dev server per app: `pnpm --filter web dev`.
