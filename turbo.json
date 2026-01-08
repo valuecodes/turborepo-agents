@@ -29,6 +29,15 @@
     "agents:sync": {
       "dependsOn": ["^agents:sync"]
     },
+    "agents:bakeoff": {
+      "cache": false
+    },
+    "agents:bakeoff:finalize": {
+      "cache": false
+    },
+    "agents:bakeoff:clean": {
+      "cache": false
+    },
     "dev": {
       "dependsOn": ["^dev"],
       "cache": false,

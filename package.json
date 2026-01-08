@@ -14,6 +14,9 @@
     "test": "turbo run test",
     "agents:check": "turbo run agents:check",
     "agents:sync": "turbo run agents:sync",
+    "agents:bakeoff": "pnpm --filter @repo/agents agents:bakeoff",
+    "agents:bakeoff:finalize": "pnpm --filter @repo/agents agents:bakeoff:finalize",
+    "agents:bakeoff:clean": "pnpm --filter @repo/agents agents:bakeoff:clean",
     "clean": "turbo run clean"
   },
   "devDependencies": {

@@ -32,3 +32,9 @@ yarn-error.log*
 
 # Misc
 .DS_Store
+
+# Bakeoff worktrees
+.worktrees/
+
+# Agent task files (generated)
+.agent-task.md

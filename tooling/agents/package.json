@@ -5,6 +5,9 @@
   "scripts": {
     "agents:check": "tsx scripts/agents-check.ts",
     "agents:sync": "tsx scripts/agents-sync.ts",
+    "agents:bakeoff": "tsx scripts/bakeoff.ts",
+    "agents:bakeoff:finalize": "tsx scripts/bakeoff-finalize.ts",
+    "agents:bakeoff:clean": "tsx scripts/bakeoff-clean.ts",
     "format:changed-files": "tsx scripts/format-changed-files.ts",
     "clean": "rm -rf .turbo node_modules .cache",
     "format": "prettier --write .",
@@ -15,9 +18,10 @@
     "@repo/prettier": "workspace:*",
     "@repo/typescript": "workspace:*",
     "@types/node": "24.10.4",
-    "zx": "8.8.5",
+    "minimist": "^1.2.8",
     "tsx": "4.21.0",
-    "typescript": "5.9.3"
+    "typescript": "5.9.3",
+    "zx": "8.8.5"
   },
   "prettier": "@repo/prettier"
 }
