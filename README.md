@@ -122,17 +122,6 @@ See `.vscode/extensions.json` for the full list.
 - Codex (`openai.chatgpt`) - Codex/ChatGPT coding assistance in-editor.
 - GitHub Pull Requests (`GitHub.vscode-pull-request-github`) - review PRs and issues without leaving VS Code.
 
-## Recommended VS Code extensions
-
-See `.vscode/extensions.json` for the full list.
-
-- Prettier (`esbenp.prettier-vscode`)
-- ESLint (`dbaeumer.vscode-eslint`)
-- Tailwind CSS (`bradlc.vscode-tailwindcss`)
-- Claude Code (`Anthropic.claude-code`)
-- Codex (`openai.chatgpt`)
-- GitHub Pull Requests (`GitHub.vscode-pull-request-github`)
-
 ## Working with Codex
 
 - Codex CLI helpers live under `.codex/` (skills for frontend and CI verification).
