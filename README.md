@@ -22,6 +22,55 @@ After creating your repo:
 - Agent tooling in `tooling/agents` (sync/check agent docs)
 - AI agent settings in `.claude/`, `.codex/`, `.cursor/`, and `.github/`
 
+Repo map:
+
+```text
+.github
+  ├─ workflows
+  │  ├─ main.yml (CI on main: lint/typecheck/test/format/agents)
+  │  └─ feature.yml (CI on PRs)
+  ├─ copilot-instructions.md (Copilot guidance)
+  ├─ commit-message-instructions.md (commit message guidance)
+  └─ pull-request-description-instructions.md (PR description guidance)
+.vscode
+  ├─ extensions.json (recommended VS Code extensions)
+  └─ settings.json (workspace settings)
+.claude
+  ├─ settings.json (Claude Code hooks + permissions)
+  └─ skills (Claude skill docs synced by agents:sync)
+.codex
+  ├─ config.toml (Codex CLI config)
+  └─ skills (Codex skill docs)
+.cursor
+  └─ skills (Cursor skill docs synced by agents:sync)
+apps
+  ├─ web
+  │  ├─ Next.js 16.1.1 + React 19
+  │  ├─ App Router with alias ~/*
+  │  └─ Tailwind CSS v4 UI surface
+  └─ playground
+     ├─ Vite 7 + React 19
+     ├─ Tailwind CSS v4
+     └─ UI experimentation sandbox
+packages
+  └─ ui
+     ├─ shadcn/ui-style components
+     ├─ Radix UI primitives + lucide-react icons
+     └─ Tailwind utilities, styles, and exports
+tooling
+  ├─ agents
+  │  ├─ agents:check (verify agent doc sync)
+  │  └─ agents:sync (sync skills across tools)
+  ├─ eslint
+  │  └─ shared flat config presets
+  ├─ prettier
+  │  └─ shared config + import/Tailwind sorting
+  ├─ typescript
+  │  └─ shared tsconfig presets
+  └─ github
+     └─ setup (composite action: pnpm + Node + install)
+```
+
 ## Prerequisites
 
 - Node.js 24.12.0 (`.nvmrc`)
