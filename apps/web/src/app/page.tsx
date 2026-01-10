@@ -7,6 +7,19 @@ import {
   CardHeader,
   CardTitle,
 } from "@repo/ui/components/card";
+import {
+  Box,
+  CheckCircle2,
+  ChevronRight,
+  Code2,
+  FolderTree,
+  GitBranch,
+  LayoutTemplate,
+  Shield,
+  Terminal,
+  Wrench,
+  Zap,
+} from "lucide-react";
 
 const templateUrl =
   "https://github.com/valuecodes/agentic-monorepo-starter/generate";
@@ -14,70 +27,53 @@ const repoUrl = "https://github.com/valuecodes/agentic-monorepo-starter";
 
 const credibilityItems = [
   {
-    title: "CI is the source of truth",
-    description: "Lint, typecheck, build, format, and agents checks gate runs.",
+    icon: <CheckCircle2 className="h-4 w-4 text-green-500" />,
+    title: "CI is Truth",
+    description: "Lint, build, and format gate every run.",
   },
   {
-    title: "Public-safe by default",
-    description: "No secrets or env files baked into the template.",
+    icon: <Shield className="h-4 w-4 text-blue-500" />,
+    title: "Public-Safe",
+    description: "Zero secrets baked into the template.",
   },
   {
-    title: "Boundary rules enforced",
-    description: "Apps import packages, packages stay independent.",
+    icon: <Box className="h-4 w-4 text-orange-500" />,
+    title: "Strict Boundaries",
+    description: "Apps consume; packages remain independent.",
   },
   {
-    title: "Agent-friendly",
-    description: "Built for Claude, Codex, Cursor, and Copilot.",
+    icon: <Code2 className="h-4 w-4 text-purple-500" />,
+    title: "Agent-Native",
+    description: "Context files for Claude & Cursor built-in.",
   },
 ];
 
-const whyBullets = [
-  "Agents drift without shared rules.",
-  "Inconsistent tooling produces mismatched output.",
-  "Boundary violations blur ownership.",
-  "CI guardrails catch risky changes early.",
-  "Public-safe defaults prevent leaks.",
-];
-
-const featureItems = [
+const features = [
   {
     title: "Guardrails by default",
-    description: "AGENTS.md and shared configs codify behavior.",
-  },
-  {
-    title: "CI as source of truth",
-    description: "Lint, typecheck, build, format, and agents checks.",
+    description:
+      "AGENTS.md and shared configs codify behavior so bots don't hallucinate architecture.",
+    icon: <Shield className="h-5 w-5" />,
+    colSpan: "lg:col-span-2",
   },
   {
     title: "Shared UI package",
-    description: "Shadcn-style primitives in @repo/ui.",
+    description: "Shadcn-style primitives ready in @repo/ui.",
+    icon: <LayoutTemplate className="h-5 w-5" />,
+    colSpan: "lg:col-span-1",
   },
   {
-    title: "Next.js + Vite apps included",
-    description: "A web landing page plus a playground app.",
+    title: "Next.js + Vite",
+    description:
+      "A production web app plus a lightning-fast playground for isolated UI experiments.",
+    icon: <Zap className="h-5 w-5" />,
+    colSpan: "lg:col-span-1",
   },
   {
-    title: "Consistent tooling",
-    description: "ESLint flat config, Prettier sorting, TS presets, Turbo.",
-  },
-  {
-    title: "Fast onboarding",
-    description: "pnpm dev runs both apps out of the box.",
-  },
-];
-
-const steps = [
-  {
-    title: "Use the template",
-    description: "Create a new repo from the GitHub template.",
-  },
-  {
-    title: "Install and run",
-    description: "pnpm install sets up the workspace, then pnpm dev.",
-  },
-  {
-    title: "Run the checks",
-    description: "Verify lint, typecheck, and build before shipping.",
+    title: "Consistent Tooling",
+    description: "ESLint, Prettier, and Turbo pre-wired.",
+    icon: <Wrench className="h-5 w-5" />,
+    colSpan: "lg:col-span-2",
   },
 ];
 
@@ -85,300 +81,317 @@ const faqItems = [
   {
     question: "Is this just create-turbo?",
     answer:
-      "It builds on Turbo but adds agent guardrails, docs, and strict tooling.",
+      "It builds on Turbo but adds agent guardrails, strict boundaries, and documentation specifically designed for LLM context windows.",
   },
   {
-    question: "Do I need Claude/Codex/Cursor?",
+    question: "Do I need AI tools to use this?",
     answer:
-      "No. The template works without agents, but it is optimized for them.",
+      "No. It's a rock-solid monorepo template on its own. The agent tooling is just a bonus layer that stays out of your way if you don't use it.",
   },
   {
-    question: "Is it safe as a template?",
-    answer: "Yes. It is public-safe and avoids secrets by default.",
-  },
-  {
-    question: "Can I remove agent tooling?",
+    question: "Why Next.js AND Vite?",
     answer:
-      "Yes. Delete tooling/agents and related scripts if you do not need it.",
-  },
-  {
-    question: "Why Next + Vite?",
-    answer: "Next.js ships the product app, Vite powers fast UI experiments.",
-  },
-  {
-    question: "What is the verification loop?",
-    answer: "Run pnpm turbo lint typecheck build before a PR.",
+      "Next.js is heavy. Vite is instant. We use Vite for a component playground (like Storybook but simpler) to iterate on UI fast, then import those components into the Next.js app.",
   },
 ];
 
-const quickstart = `pnpm install
-pnpm dev
-pnpm turbo lint typecheck build`;
-
 const Home = () => {
   return (
-    <div className="bg-background text-foreground min-h-screen">
-      <main className="relative mx-auto flex w-full max-w-6xl flex-col gap-16 px-6 py-16 sm:py-20">
-        <div className="from-primary/10 via-muted/40 to-background pointer-events-none absolute inset-x-0 -top-24 -z-10 h-72 bg-gradient-to-b" />
-        <header className="flex flex-col gap-6 bg-muted/20">
-          <div className="flex flex-wrap items-center gap-3 text-sm">
-            <Badge
-              variant="outline"
-              className="border-primary/20 bg-primary/10 text-primary"
-            >
-              Agentic Monorepo Starter
-            </Badge>
-            <span className="text-muted-foreground">
-              Guardrails-first Turborepo template
-            </span>
-          </div>
-          <div className="space-y-4">
-            <h1
-              id="hero-title"
-              className="text-4xl font-semibold tracking-tight sm:text-5xl"
-            >
+    <div className="bg-background text-foreground selection:bg-primary/20 min-h-screen font-sans">
+      {/* Background Ambience */}
+      <div className="pointer-events-none fixed inset-0 z-[-1] overflow-hidden">
+        <div className="bg-primary/5 absolute top-[-10%] left-[-10%] h-[40%] w-[40%] rounded-full blur-[120px]" />
+        <div className="absolute right-[-10%] bottom-[-10%] h-[40%] w-[40%] rounded-full bg-blue-500/5 blur-[120px]" />
+      </div>
+
+      <main className="mx-auto w-full max-w-5xl space-y-24 px-6 py-16 sm:py-24">
+        {/* Hero Section */}
+        <header className="animate-in fade-in slide-in-from-bottom-4 flex flex-col items-center space-y-8 text-center duration-700">
+          <Badge
+            variant="outline"
+            className="border-primary/20 bg-primary/5 text-primary rounded-full px-4 py-1.5 text-sm backdrop-blur-sm"
+          >
+            v1.0 Public Template
+          </Badge>
+
+          <div className="max-w-3xl space-y-4">
+            <h1 className="from-foreground to-foreground/70 bg-gradient-to-b bg-clip-text text-4xl font-bold tracking-tighter text-transparent sm:text-6xl md:text-7xl">
               Agentic Monorepo Starter
             </h1>
-            <p className="text-muted-foreground max-w-2xl text-base sm:text-lg">
-              Guardrails, strict rules, consistent tooling, and clear boundaries
-              for agent-driven changes.
+            <p className="text-muted-foreground mx-auto max-w-2xl text-lg leading-relaxed sm:text-xl">
+              Stop fighting your agents. Give them guardrails, strict types, and
+              clear boundaries so they can actually ship code.
             </p>
           </div>
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-            <Button asChild size="lg">
+
+          <div className="flex w-full flex-col justify-center gap-4 sm:flex-row">
+            <Button asChild size="lg" className="shadow-primary/20">
               <a href={templateUrl} target="_blank" rel="noreferrer noopener">
-                Use this template
+                <GitBranch className="mr-2 h-4 w-4" />
+                Use Template
               </a>
             </Button>
+
             <Button asChild variant="outline" size="lg">
               <a href={repoUrl} target="_blank" rel="noreferrer noopener">
-                View on GitHub
+                View Source
               </a>
             </Button>
           </div>
-          <p className="text-muted-foreground text-sm">
-            Node/pnpm pinned | Turbo | strict lint/typecheck/format
-          </p>
+
+          {/* Quickstart Snippet */}
+          <div className="group relative mt-8 w-full max-w-md">
+            <div className="from-primary/20 absolute -inset-0.5 rounded-xl bg-gradient-to-r to-blue-500/20 opacity-20 blur transition duration-500 group-hover:opacity-40"></div>
+            <div className="relative rounded-lg border border-white/10 bg-black/90 p-4 text-left font-mono text-sm text-zinc-100 shadow-2xl">
+              <div className="absolute top-4 left-4 flex gap-1.5">
+                <div className="h-2.5 w-2.5 rounded-full bg-red-500/20"></div>
+                <div className="h-2.5 w-2.5 rounded-full bg-yellow-500/20"></div>
+                <div className="h-2.5 w-2.5 rounded-full bg-green-500/20"></div>
+              </div>
+              <pre className="overflow-x-auto pt-8">
+                <code className="text-blue-400">git clone</code>{" "}
+                <span className="text-zinc-500">...</span>
+                <br />
+                <code className="text-blue-400">pnpm</code> install
+                <br />
+                <code className="text-blue-400">pnpm</code> dev
+              </pre>
+            </div>
+          </div>
         </header>
 
-        <section aria-labelledby="credibility">
-          <h2 id="credibility" className="text-lg font-semibold">
-            Credibility
-          </h2>
-          <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {credibilityItems.map((item) => (
-              <div
-                key={item.title}
-                className="bg-muted/20 rounded-lg border border-primary/10 p-4"
-              >
-                <div className="text-sm font-semibold">{item.title}</div>
-                <div className="text-muted-foreground mt-2 text-sm">
-                  {item.description}
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section
-          aria-labelledby="why"
-          className="grid gap-6 lg:grid-cols-[1fr_1.2fr]"
-        >
-          <div className="space-y-3">
-            <Badge
-              variant="outline"
-              className="w-fit border-primary/20 bg-primary/10 text-primary"
+        {/* Credibility Ticker */}
+        <section className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {credibilityItems.map((item, i) => (
+            <div
+              key={i}
+              className="bg-muted/30 border-border/50 hover:bg-muted/50 flex flex-col items-center rounded-xl border p-4 text-center transition-colors sm:items-start sm:text-left"
             >
-              Why this exists
-            </Badge>
-            <h2 id="why" className="text-2xl font-semibold">
-              Stop agent drift before it ships.
-            </h2>
-            <p className="text-muted-foreground text-sm">
-              A focused template that makes boundaries and checks the default.
-            </p>
-          </div>
-          <ul className="text-muted-foreground grid gap-3 text-sm">
-            {whyBullets.map((item) => (
-              <li key={item} className="flex gap-2">
-                <span className="bg-primary mt-1 size-1.5 rounded-full" />
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
+              <div className="bg-background border-border/50 mb-3 rounded-lg border p-2 shadow-sm">
+                {item.icon}
+              </div>
+              <h3 className="text-sm font-semibold">{item.title}</h3>
+              <p className="text-muted-foreground mt-1 text-xs">
+                {item.description}
+              </p>
+            </div>
+          ))}
         </section>
 
-        <section aria-labelledby="features" className="space-y-6">
-          <div className="space-y-2">
-            <h2 id="features" className="text-2xl font-semibold">
-              Feature grid
-            </h2>
-            <p className="text-muted-foreground text-sm">
-              Everything is prewired to keep agents aligned with your repo
-              rules.
-            </p>
+        {/* Bento Grid Features */}
+        <section className="space-y-8">
+          <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
+            <div className="space-y-1">
+              <h2 className="text-3xl font-semibold tracking-tight">
+                Batteries Included
+              </h2>
+              <p className="text-muted-foreground">
+                Everything prewired to keep agents aligned with your rules.
+              </p>
+            </div>
           </div>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {featureItems.map((feature) => (
+
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {features.map((feature, i) => (
               <Card
-                key={feature.title}
-                className="border-primary/10 bg-card/60 hover:border-primary/30 hover:bg-muted/20"
+                key={i}
+                className={`${feature.colSpan || ""} bg-card/50 border-primary/10 hover:border-primary/20 backdrop-blur-sm transition-all duration-300`}
               >
-                <CardHeader className="bg-muted/20">
-                  <CardTitle className="text-base">{feature.title}</CardTitle>
-                  <CardDescription>{feature.description}</CardDescription>
+                <CardHeader>
+                  <div className="bg-primary/10 text-primary mb-2 flex h-10 w-10 items-center justify-center rounded-lg">
+                    {feature.icon}
+                  </div>
+                  <CardTitle className="text-lg">{feature.title}</CardTitle>
                 </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-base">
+                    {feature.description}
+                  </CardDescription>
+                </CardContent>
               </Card>
             ))}
           </div>
         </section>
 
-        <section
-          aria-labelledby="how-it-works"
-          className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]"
-        >
-          <div className="space-y-6">
-            <div className="space-y-2">
-              <h2 id="how-it-works" className="text-2xl font-semibold">
-                How it works
-              </h2>
-              <p className="text-muted-foreground text-sm">
-                Use the template, run the workspace, then verify with Turbo.
-              </p>
-            </div>
-            <ol className="space-y-4 text-sm">
-              {steps.map((step, index) => (
-                <li key={step.title} className="flex gap-3">
-                  <span className="text-primary/80 mt-0.5 text-xs font-semibold">
-                    0{index + 1}
-                  </span>
-                  <div>
-                    <div className="font-semibold">{step.title}</div>
-                    <div className="text-muted-foreground mt-1">
-                      {step.description}
-                    </div>
-                  </div>
-                </li>
-              ))}
-            </ol>
-          </div>
-          <div className="bg-muted/50 rounded-lg border border-primary/10 p-5">
-            <div className="text-sm font-semibold">Quickstart</div>
-            <pre className="text-muted-foreground bg-background/80 mt-3 overflow-x-auto rounded-md p-4 text-xs sm:text-sm">
-              <code>{quickstart}</code>
-            </pre>
-          </div>
-        </section>
+        {/* The Philosophy / "Why" Section */}
+        <section className="bg-primary/5 border-primary/10 relative overflow-hidden rounded-3xl border p-8 sm:p-12 lg:p-16">
+          <div className="bg-primary/10 pointer-events-none absolute top-0 right-0 -mt-10 -mr-10 h-64 w-64 rounded-full blur-[80px]" />
 
-        <section
-          aria-labelledby="guardrails"
-          className="grid gap-6 lg:grid-cols-[1fr_1.1fr]"
-        >
-          <div className="space-y-3">
-            <h2 id="guardrails" className="text-2xl font-semibold">
-              Guardrails, enforced
-            </h2>
-            <p className="text-muted-foreground text-sm">
-              Keep agents within repo boundaries and codify behavior once.
-            </p>
-            <p className="text-muted-foreground text-sm">
-              Agent rules live in <code>tooling/agents</code>. Sync them with{" "}
-              <code>pnpm agents:sync</code> and validate with{" "}
-              <code>pnpm agents:check</code>.
-            </p>
-          </div>
-          <div className="bg-accent/40 rounded-lg border border-primary/20 p-5">
-            <blockquote className="text-muted-foreground text-sm italic">
-              "Apps import packages only. Keep diffs tight. No secrets or env
-              files. Agents never run git ops."
-            </blockquote>
-          </div>
-        </section>
-
-        <section aria-labelledby="structure" className="space-y-6">
-          <div className="space-y-2">
-            <h2 id="structure" className="text-2xl font-semibold">
-              Repo structure preview
-            </h2>
-            <p className="text-muted-foreground text-sm">
-              Three clear zones keep ownership and tooling clean.
-            </p>
-          </div>
-          <div className="grid gap-4 sm:grid-cols-3">
-            <div className="bg-muted/20 rounded-lg border border-primary/10 p-4">
-              <div className="text-sm font-semibold">Apps</div>
-              <p className="text-muted-foreground mt-2 text-sm">
-                Next.js web + Vite playground for UI experiments.
-              </p>
-            </div>
-            <div className="bg-muted/20 rounded-lg border border-primary/10 p-4">
-              <div className="text-sm font-semibold">Packages</div>
-              <p className="text-muted-foreground mt-2 text-sm">
-                Shared UI and utilities consumed by apps.
-              </p>
-            </div>
-            <div className="bg-muted/20 rounded-lg border border-primary/10 p-4">
-              <div className="text-sm font-semibold">Tooling</div>
-              <p className="text-muted-foreground mt-2 text-sm">
-                ESLint, Prettier, TypeScript, Turbo, and agent scripts.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section aria-labelledby="faq" className="space-y-6">
-          <div className="space-y-2">
-            <h2 id="faq" className="text-2xl font-semibold">
-              FAQ
-            </h2>
-            <p className="text-muted-foreground text-sm">
-              Short answers to common template questions.
-            </p>
-          </div>
-          <div className="grid gap-3">
-            {faqItems.map((item) => (
-              <details
-                key={item.question}
-                className="group bg-muted/20 rounded-lg border border-primary/10 p-4 hover:border-primary/20"
+          <div className="relative z-10 grid items-center gap-12 lg:grid-cols-2">
+            <div className="space-y-6">
+              <Badge
+                variant="outline"
+                className="bg-background/50 backdrop-blur"
               >
-                <summary className="cursor-pointer text-sm font-semibold text-foreground hover:text-primary">
-                  {item.question}
-                </summary>
-                <p className="text-muted-foreground mt-2 text-sm">
-                  {item.answer}
+                The Philosophy
+              </Badge>
+              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+                Agents drift. <br />
+                <span className="text-muted-foreground">
+                  Architecture shouldn&apos;t.
+                </span>
+              </h2>
+              <div className="text-muted-foreground space-y-4 text-lg">
+                <p>
+                  When you let an agent loose on a repo, it takes the path of
+                  least resistance. Without boundaries, it creates duplicate
+                  utils, messy imports, and side effects.
                 </p>
-              </details>
+                <p>
+                  This template enforces{" "}
+                  <span className="text-foreground font-medium">
+                    shared rules
+                  </span>
+                  ,
+                  <span className="text-foreground font-medium">
+                    {" "}
+                    consistent tooling
+                  </span>
+                  , and
+                  <span className="text-foreground font-medium">
+                    {" "}
+                    strict boundaries
+                  </span>
+                  . If the agent breaks a rule, the build fails. Simple as that.
+                </p>
+              </div>
+            </div>
+
+            <div className="bg-background/80 border-border/50 rounded-xl border p-6 shadow-sm backdrop-blur-sm">
+              <h3 className="mb-4 flex items-center gap-2 font-semibold">
+                <FolderTree className="text-primary h-4 w-4" />
+                Repo Structure
+              </h3>
+              <div className="text-muted-foreground space-y-3 font-mono text-sm">
+                <div className="text-foreground flex items-center gap-2">
+                  <Box className="h-4 w-4 text-blue-500" />
+                  <span>apps/</span>
+                </div>
+                <div className="border-border space-y-2 border-l pl-6">
+                  <div className="flex items-center gap-2">
+                    <span className="border-border w-3 border-t" />
+                    <span>web</span>
+                    <span className="text-muted-foreground ml-auto text-xs">
+                      Next.js Product
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="border-border w-3 border-t" />
+                    <span>playground</span>
+                    <span className="text-muted-foreground ml-auto text-xs">
+                      Vite Experiments
+                    </span>
+                  </div>
+                </div>
+
+                <div className="text-foreground flex items-center gap-2 pt-2">
+                  <Box className="h-4 w-4 text-orange-500" />
+                  <span>packages/</span>
+                </div>
+                <div className="border-border space-y-2 border-l pl-6">
+                  <div className="flex items-center gap-2">
+                    <span className="border-border w-3 border-t" />
+                    <span>ui</span>
+                    <span className="text-muted-foreground ml-auto text-xs">
+                      Shadcn Components
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="border-border w-3 border-t" />
+                    <span>typescript-config</span>
+                  </div>
+                </div>
+
+                <div className="text-foreground flex items-center gap-2 pt-2">
+                  <Terminal className="h-4 w-4 text-purple-500" />
+                  <span>tooling/</span>
+                </div>
+                <div className="border-border space-y-2 border-l pl-6">
+                  <div className="flex items-center gap-2">
+                    <span className="border-border w-3 border-t" />
+                    <span>agents</span>
+                    <span className="text-muted-foreground ml-auto text-xs">
+                      Prompts & Context
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* How it works */}
+        <section className="space-y-12">
+          <div className="mx-auto max-w-2xl space-y-4 text-center">
+            <h2 className="text-3xl font-bold">The Workflow</h2>
+            <p className="text-muted-foreground">
+              Simple enough for humans, strict enough for bots.
+            </p>
+          </div>
+
+          <div className="relative grid gap-8 md:grid-cols-3">
+            {/* Connector Line */}
+            <div className="via-border absolute top-12 right-[20%] left-[20%] hidden h-[2px] bg-gradient-to-r from-transparent to-transparent md:block" />
+
+            {[
+              {
+                step: "01",
+                title: "Clone",
+                desc: "Use the template to create a new repo.",
+              },
+              {
+                step: "02",
+                title: "Dev",
+                desc: "pnpm dev runs both apps instantly.",
+              },
+              {
+                step: "03",
+                title: "Verify",
+                desc: "Lint, typecheck, and build gate the PR.",
+              },
+            ].map((item) => (
+              <div
+                key={item.step}
+                className="relative z-10 flex flex-col items-center space-y-4 text-center"
+              >
+                <div className="border-muted bg-background flex h-24 w-24 items-center justify-center rounded-full border-4 shadow-sm">
+                  <span className="text-muted-foreground/50 text-2xl font-bold">
+                    {item.step}
+                  </span>
+                </div>
+                <h3 className="text-xl font-semibold">{item.title}</h3>
+                <p className="text-muted-foreground">{item.desc}</p>
+              </div>
             ))}
           </div>
         </section>
 
-        <section aria-labelledby="final-cta">
-          <Card className="border-primary/20 bg-muted/40">
-            <CardHeader>
-              <CardTitle className="text-2xl">Ready to ship?</CardTitle>
-              <CardDescription>
-                Spin up the template and let the guardrails do the work.
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-                <Button asChild size="lg">
-                  <a href={templateUrl} target="_blank" rel="noreferrer noopener">
-                    Use this template
-                  </a>
-                </Button>
-                <Button asChild variant="outline" size="lg">
-                  <a href={repoUrl} target="_blank" rel="noreferrer noopener">
-                    View on GitHub
-                  </a>
-                </Button>
+        {/* FAQ */}
+        <section className="border-border mx-auto max-w-3xl space-y-8 border-t pt-16">
+          <h2 className="text-center text-2xl font-semibold">
+            Common Questions
+          </h2>
+          <div className="space-y-4">
+            {faqItems.map((item, i) => (
+              <div
+                key={i}
+                className="border-border/50 bg-card/30 hover:bg-card/50 group rounded-lg border p-6 transition-colors"
+              >
+                <h3 className="text-foreground mb-2 flex items-center justify-between font-medium">
+                  {item.question}
+                  <ChevronRight className="text-muted-foreground h-4 w-4 opacity-0 transition-opacity group-hover:opacity-100" />
+                </h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  {item.answer}
+                </p>
               </div>
-              <p className="text-muted-foreground text-sm">
-                If it saves you time, consider starring the repo.
-              </p>
-            </CardContent>
-          </Card>
+            ))}
+          </div>
         </section>
+
+        <footer className="text-muted-foreground pt-12 pb-8 text-center text-sm">
+          <p>© {new Date().getFullYear()} Valuecodes</p>
+        </footer>
       </main>
     </div>
   );
