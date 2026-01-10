@@ -14,6 +14,17 @@ After creating your repo:
 - Run the checks once to verify everything is green:
   - `pnpm turbo lint typecheck build`
 
+## Use this template
+
+This repo is intended to be used via GitHub’s **Use this template** button.
+
+After creating your repo:
+
+- Rename package scope (optional): replace `@repo/*` with your own scope (e.g. `@acme/*`)
+- Update `name`, `description`, and links in `package.json`
+- Run the checks once to verify everything is green:
+  - `pnpm turbo lint typecheck build`
+
 ## What's inside
 
 - Next.js app in `apps/web` (App Router, alias `~/*`)
@@ -110,6 +121,17 @@ See `.vscode/extensions.json` for the full list.
 - Claude Code (`Anthropic.claude-code`) - Claude agent workflows inside VS Code.
 - Codex (`openai.chatgpt`) - Codex/ChatGPT coding assistance in-editor.
 - GitHub Pull Requests (`GitHub.vscode-pull-request-github`) - review PRs and issues without leaving VS Code.
+
+## Recommended VS Code extensions
+
+See `.vscode/extensions.json` for the full list.
+
+- Prettier (`esbenp.prettier-vscode`)
+- ESLint (`dbaeumer.vscode-eslint`)
+- Tailwind CSS (`bradlc.vscode-tailwindcss`)
+- Claude Code (`Anthropic.claude-code`)
+- Codex (`openai.chatgpt`)
+- GitHub Pull Requests (`GitHub.vscode-pull-request-github`)
 
 ## Working with Codex
 
