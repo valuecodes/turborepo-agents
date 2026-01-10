@@ -1,81 +1,16 @@
 import { Badge } from "@repo/ui/components/badge";
 import { Button } from "@repo/ui/components/button";
 import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@repo/ui/components/card";
-import {
   Box,
-  CheckCircle2,
   ChevronRight,
-  Code2,
   FolderTree,
   GitBranch,
-  LayoutTemplate,
-  Shield,
   Terminal,
-  Wrench,
-  Zap,
 } from "lucide-react";
 
 const templateUrl =
   "https://github.com/valuecodes/agentic-monorepo-starter/generate";
 const repoUrl = "https://github.com/valuecodes/agentic-monorepo-starter";
-
-const credibilityItems = [
-  {
-    icon: <CheckCircle2 className="h-4 w-4 text-green-500" />,
-    title: "CI is Truth",
-    description: "Lint, build, and format gate every run.",
-  },
-  {
-    icon: <Shield className="h-4 w-4 text-blue-500" />,
-    title: "Public-Safe",
-    description: "Zero secrets baked into the template.",
-  },
-  {
-    icon: <Box className="h-4 w-4 text-orange-500" />,
-    title: "Strict Boundaries",
-    description: "Apps consume; packages remain independent.",
-  },
-  {
-    icon: <Code2 className="h-4 w-4 text-purple-500" />,
-    title: "Agent-Native",
-    description: "Context files for Claude & Cursor built-in.",
-  },
-];
-
-const features = [
-  {
-    title: "Guardrails by default",
-    description:
-      "AGENTS.md and shared configs codify behavior so bots don't hallucinate architecture.",
-    icon: <Shield className="h-5 w-5" />,
-    colSpan: "lg:col-span-2",
-  },
-  {
-    title: "Shared UI package",
-    description: "Shadcn-style primitives ready in @repo/ui.",
-    icon: <LayoutTemplate className="h-5 w-5" />,
-    colSpan: "lg:col-span-1",
-  },
-  {
-    title: "Next.js + Vite",
-    description:
-      "A production web app plus a lightning-fast playground for isolated UI experiments.",
-    icon: <Zap className="h-5 w-5" />,
-    colSpan: "lg:col-span-1",
-  },
-  {
-    title: "Consistent Tooling",
-    description: "ESLint, Prettier, and Turbo pre-wired.",
-    icon: <Wrench className="h-5 w-5" />,
-    colSpan: "lg:col-span-2",
-  },
-];
 
 const faqItems = [
   {
@@ -159,59 +94,6 @@ const Home = () => {
             </div>
           </div>
         </header>
-
-        {/* Credibility Ticker */}
-        <section className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {credibilityItems.map((item, i) => (
-            <div
-              key={i}
-              className="bg-muted/30 border-border/50 hover:bg-muted/50 flex flex-col items-center rounded-xl border p-4 text-center transition-colors sm:items-start sm:text-left"
-            >
-              <div className="bg-background border-border/50 mb-3 rounded-lg border p-2 shadow-sm">
-                {item.icon}
-              </div>
-              <h3 className="text-sm font-semibold">{item.title}</h3>
-              <p className="text-muted-foreground mt-1 text-xs">
-                {item.description}
-              </p>
-            </div>
-          ))}
-        </section>
-
-        {/* Bento Grid Features */}
-        <section className="space-y-8">
-          <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
-            <div className="space-y-1">
-              <h2 className="text-3xl font-semibold tracking-tight">
-                Batteries Included
-              </h2>
-              <p className="text-muted-foreground">
-                Everything prewired to keep agents aligned with your rules.
-              </p>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {features.map((feature, i) => (
-              <Card
-                key={i}
-                className={`${feature.colSpan || ""} bg-card/50 border-primary/10 hover:border-primary/20 backdrop-blur-sm transition-all duration-300`}
-              >
-                <CardHeader>
-                  <div className="bg-primary/10 text-primary mb-2 flex h-10 w-10 items-center justify-center rounded-lg">
-                    {feature.icon}
-                  </div>
-                  <CardTitle className="text-lg">{feature.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-base">
-                    {feature.description}
-                  </CardDescription>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </section>
 
         {/* The Philosophy / "Why" Section */}
         <section className="bg-primary/5 border-primary/10 relative overflow-hidden rounded-3xl border p-8 sm:p-12 lg:p-16">
