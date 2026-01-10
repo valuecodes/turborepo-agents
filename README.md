@@ -1,6 +1,7 @@
 # Agentic Monorepo Starter
 
-Monorepo starter for building agent-friendly web apps (Next.js + Vite) with preconfigured tooling, shared UI, and repo-level AI settings.
+A monorepo starter with strict rules for agentic development, consistent tooling, and clear boundaries.
+Keeps agents in check and the project clean, focused, and maintainable.
 
 ## Use this template
 
