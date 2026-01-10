@@ -1,6 +1,7 @@
 import { Badge } from "@repo/ui/components/badge";
 import { Button } from "@repo/ui/components/button";
 import {
+  AppWindow,
   Box,
   ChevronRight,
   FolderTree,
@@ -21,7 +22,7 @@ interface RepoFolder {
 const repoStructure: RepoFolder[] = [
   {
     name: "apps",
-    icon: <Box className="h-4 w-4" />,
+    icon: <AppWindow className="h-4 w-4" />,
     children: [
       { name: "web", description: "Next.js" },
       { name: "playground", description: "Vite" },
